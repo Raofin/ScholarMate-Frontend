@@ -1,11 +1,11 @@
 import { Container } from 'react-bootstrap';
 
-function HomePage() {
+function CoursePage() {
   return (
     <Container className="mt-4 w-20 p-3 d-flex justify-content-center">
-      <h1>Welcome to ScholarMate!</h1>
+      <h1>Courses</h1>
     </Container>
   );
 }
 
-export default HomePage;
+export default CoursePage;
