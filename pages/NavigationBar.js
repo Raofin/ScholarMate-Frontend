@@ -11,7 +11,8 @@ function NavigationBar() {
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/SignIn">Sign In</Nav.Link>
             <Nav.Link href="/SignUp">Sign Up</Nav.Link>
-            <Nav.Link href="/Others">Others</Nav.Link>
+            <Nav.Link href="/Others">Others Routes</Nav.Link>
+            <Nav.Link href="/Students">Students</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </div>
