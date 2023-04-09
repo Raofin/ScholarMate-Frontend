@@ -16,7 +16,7 @@ export default function StudentDetails({ student }) {
   return (
     <div className="container mx-auto">
       <h1 className="my-4">{ student.name } Deatils</h1>
-      <table className="table">
+      <table className="table table-striped table-hover">
         <tbody>
         <tr>
           <td>ID:</td>
@@ -41,6 +41,10 @@ export default function StudentDetails({ student }) {
         <tr>
           <td>CGPA:</td>
           <td>{ student.cgpa }</td>
+        </tr>
+        <tr>
+          <td>Department:</td>
+          <td>{ student.department.name }</td>
         </tr>
         <tr>
           <td>Join Date:</td>
