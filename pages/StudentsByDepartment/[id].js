@@ -1,8 +1,10 @@
 import axios from 'axios';
-import { API_ENDPOINT } from './config';
+import { API_ENDPOINT } from '../config';
+import { useRouter } from 'next/router';
 
 export async function getServerSideProps(context) {
-  let { id } = context.query;
+  const { params } = context;
+  let { id } = params;
   id = id ?? 1;
 
   const response = await axios.get(`${ API_ENDPOINT }/students`);
@@ -12,7 +14,11 @@ export async function getServerSideProps(context) {
 }
 
 export default function StudentTable({ students }) {
-  console.log(students);
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="container mx-auto" style={ { marginBottom: '100px' } }>
