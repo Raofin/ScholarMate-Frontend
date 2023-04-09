@@ -2,7 +2,7 @@ import {Container} from 'react-bootstrap';
 
 function Others() {
   return (
-    <Container className="mt-4 w-25 p-3 justify-content-center">
+    <Container className="mt-4 w-25 p-3 justify-content-center" style={{marginBottom: '100px'}}>
       <h1>Others</h1><br/>
       <h3><a href="./my-account">My Account</a></h3><br/>
       <h3><a href="./result">Result</a></h3><br/>
