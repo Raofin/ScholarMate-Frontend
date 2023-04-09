@@ -2,15 +2,20 @@ import axios from 'axios';
 import { API_ENDPOINT } from './config';
 
 export async function getServerSideProps(context) {
+  let { id } = context.query;
+  id = id ?? 1;
+
   const response = await axios.get(`${ API_ENDPOINT }/students`);
-  const students = response.data;
+  const students = response.data.filter((student) => student.department.id == id);
 
   return { props: { students } };
 }
 
 export default function StudentTable({ students }) {
+  console.log(students);
+
   return (
-    <div className="container mx-auto" style={{marginBottom: '100px'}}>
+    <div className="container mx-auto" style={ { marginBottom: '100px' } }>
       <h1 className="my-4">Student List</h1>
       <table className="table table-striped table-hover">
         <thead>
