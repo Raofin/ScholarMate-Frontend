@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useRouter } from 'next/router';
-import { API_ENDPOINT } from './config';
+import { API_ENDPOINT } from '../config';
 
 export async function getServerSideProps(context) {
   let { id } = context.query;

@@ -1,4 +1,4 @@
-export default function SigninPage() {
+export default function LoginPage() {
   return (
     <div className="container w-80 mt-20 mx-auto">
       <h1 className="text-title">Login</h1>

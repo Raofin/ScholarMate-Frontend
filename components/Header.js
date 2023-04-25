@@ -1,4 +1,4 @@
-export default function NavigationBar() {
+export default function Header() {
   return (
     <nav
       className="bg-white dark:bg-gray-800  w-full px-5 z-20 mb-2 top-0 left-0 border-b border-gray-200 dark:border-gray-600 drop-shadow-lg">

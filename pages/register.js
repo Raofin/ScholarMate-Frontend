@@ -1,8 +1,8 @@
 import { Container, Form, Button } from 'react-bootstrap';
-import { API_ENDPOINT } from './config';
+import { API_ENDPOINT } from '@/config';
 import axios from 'axios';
 
-export default function SignupPage() {
+export default function RegisterPage() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const randomNumber = Math.floor(Math.random() * 90000) + 10000;

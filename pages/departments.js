@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { API_ENDPOINT } from './config';
+import { API_ENDPOINT } from '../config';
 
 export async function getServerSideProps(context) {
   const response = await axios.get(`${ API_ENDPOINT }/departments`);
