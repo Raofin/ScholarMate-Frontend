@@ -1,10 +1,10 @@
-import { Container } from 'react-bootstrap';
+// import { Container } from 'react-bootstrap';
 
 function HomePage() {
   return (
-    <Container className="mt-4 w-20 p-3 d-flex justify-content-center">
-      <h1>Welcome to ScholarMate!</h1>
-    </Container>
+    <div className="mt-4 w-20 p-3 flex justify-center">
+      <h1 className="text-3xl font-bold">Welcome to ScholarMate!</h1>
+    </div>
   );
 }
 
