@@ -33,47 +33,45 @@ export default function SignupPage() {
   };
 
   return (
-    <div>
-      <Container className="mt-4 w-25 p-3">
-        <Form onSubmit={ handleSubmit }>
-          <Form.Group className="mt-3">
-            <Form.Label className="mb-0">Name</Form.Label>
-            <Form.Control type="text" placeholder="Enter name" name="name"/>
-          </Form.Group>
-
-          <Form.Group className="mt-3">
-            <Form.Label className="mb-0">Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" name="email"/>
-          </Form.Group>
-
-          <Form.Group className="mt-3">
-            <Form.Label className="mb-0">Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" name="password"/>
-          </Form.Group>
-
-          <Form.Group className="mt-3">
-            <Form.Label className="mb-0">Phone</Form.Label>
-            <Form.Control type="text" placeholder="Enter phone" name="phone"/>
-          </Form.Group>
-
-          <Form.Group className="mt-3">
-            <Form.Label className="mb-0">Department</Form.Label>
-            <Form.Control as="select" name="department">
-              <option value="">Select Department...</option>
-              <option value="1">CSE</option>
-              <option value="2">EEE</option>
-              <option value="3">LLB</option>
-              <option value="4">ME</option>
-            </Form.Control>
-          </Form.Group>
-
-          <div className="d-flex justify-content-center">
-            <Button variant="primary" type="submit" className="mt-3">
-              Sign Up
-            </Button>
-          </div>
-        </Form>
-      </Container>
+    <div className="container w-80 mt-20 mx-auto">
+      <h1 className="text-title">Register</h1>
+      <form>
+        <div className="mb-5">
+          <label htmlFor="name" className="text-form-title">Name</label>
+          <input type="text" id="name" className="grey-input"
+                 placeholder="Enter your name here" required/>
+        </div>
+        <div className="mb-5">
+          <label htmlFor="email" className="text-form-title">Email</label>
+          <input type="email" id="email" className="grey-input"
+                 placeholder="name@email.com" required/>
+        </div>
+        <div className="mb-5">
+          <label htmlFor="password" className="text-form-title">Password</label>
+          <input type="password" id="password" className="grey-input"
+                 placeholder="Enter your password" required/>
+        </div>
+        <div className="mb-5">
+          <label htmlFor="phone" className="text-form-title">Phone Number</label>
+          <input type="tel" id="phone" className="grey-input"
+                 placeholder="Your phone number" required/>
+        </div>
+        <div className="mb-5">
+          <label htmlFor="department" className="text-form-title">Department</label>
+          <select id="department" className="grey-input" required>
+            <option value="">Select department</option>
+            <option value="CSE">CSE</option>
+            <option value="EEE">EEE</option>
+            <option value="LLB">LLB</option>
+            <option value="ME">ME</option>
+          </select>
+        </div>
+        <div className="flex justify-center">
+          <button type="submit" className="blue-button">
+            Register
+          </button>
+        </div>
+      </form>
     </div>
   );
 }

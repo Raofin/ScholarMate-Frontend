@@ -7,3 +7,19 @@
 body {
     @apply bg-slate-600;
 }
+
+.text-title {
+    @apply text-4xl mb-6 font-black text-center text-white;
+}
+
+.text-form-title {
+    @apply block mb-1 ml-1 text-sm font-medium text-gray-900 dark:text-white;
+}
+
+.blue-button {
+    @apply text-white bg-blue-700 hover:bg-blue-800 drop-shadow-lg focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm ml-2 px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800;
+}
+
+.grey-input {
+    @apply bg-gray-50 text-gray-900 drop-shadow-lg text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
+}
