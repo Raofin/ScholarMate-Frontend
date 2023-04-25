@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     <nav
-      className="bg-white dark:bg-gray-800  w-full px-5 z-20 mb-2 top-0 left-0 border-b border-gray-200 dark:border-gray-600 drop-shadow-lg">
+      className="bg-white mb-7 dark:bg-gray-800 w-full px-5 z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600 drop-shadow-lg">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="#" className="flex items-center">
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">

@@ -1,7 +1,7 @@
 export default function TablePage() {
   return (
     <div className="table-container">
-      <table className="table-1">
+      <table className="table-style-1">
         <thead>
           <tr>
             <th scope="col">Product name</th>
