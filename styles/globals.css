@@ -1,11 +1,10 @@
-@import "./inter-font-family/inter.css";
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
   @apply bg-slate-600 min-h-screen;
+  font-family: 'var(--font-inter)', sans-serif;
 }
 
 a {
@@ -13,7 +12,7 @@ a {
 }
 
 .text-title {
-  @apply text-4xl mb-6 font-black text-center text-white;
+  @apply text-4xl mt-10 mb-6 font-black text-center text-white;
 }
 
 .text-form-title {
@@ -32,33 +31,33 @@ a {
 /* Table */
 
 .table-container {
-  @apply relative mx-12 my-12 overflow-x-auto shadow-md sm:rounded-lg;
+  @apply relative mx-5 my-5 overflow-x-auto shadow-md sm:rounded-lg;
 }
 
-.table-1 {
+.table-style-1 {
   @apply w-full text-sm text-left text-gray-500 whitespace-nowrap dark:text-gray-400;
 }
 
-.table-1 thead > tr:first-child {
-  @apply text-sm text-gray-700 uppercase bg-gray-50 whitespace-nowrap dark:bg-gray-900 dark:text-gray-400;
+.table-style-1 thead > tr:first-child {
+  @apply text-sm text-gray-200 uppercase bg-gray-50 hover:bg-gray-900 whitespace-nowrap dark:bg-gray-900;
 }
 
-.table-1 tr:nth-child(odd) {
-  @apply bg-white border-b dark:bg-gray-700 whitespace-nowrap dark:border-gray-700;
+.table-style-1 tr:nth-child(odd) {
+  @apply bg-white border-b dark:bg-gray-700 hover:bg-gray-600 whitespace-nowrap dark:border-gray-700;
 }
 
-.table-1 tr:nth-child(even) {
-  @apply border-b bg-gray-50 dark:bg-gray-800 whitespace-nowrap dark:border-gray-700;
+.table-style-1 tr:nth-child(even) {
+  @apply border-b bg-gray-50 dark:bg-gray-800 hover:bg-gray-600 whitespace-nowrap dark:border-gray-700;
 }
 
-.table-1 th {
+.table-style-1 th {
   @apply px-6 py-4;
 }
 
-.table-1 td {
+.table-style-1 td {
   @apply px-6 py-3;
 }
 
-.table-1 tr td:first-child {
-  @apply text-white;
+.table-style-1 tr td:first-child {
+  @apply text-gray-200;
 }
