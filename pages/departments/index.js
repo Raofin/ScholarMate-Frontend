@@ -19,7 +19,7 @@ export default function DepartmentTable({ departments }) {
               <th>Department Name</th>
               <th>Description</th>
               <th>Department Head</th>
-              <th>Total Students</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>

@@ -1,5 +1,3 @@
-// import { Container } from 'react-bootstrap';
-
 function HomePage() {
   return (
     <div className="mt-4 w-20 p-3 flex justify-center">

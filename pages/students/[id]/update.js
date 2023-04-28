@@ -13,11 +13,11 @@ export async function getServerSideProps(context) {
   return { props: { student } };
 }
 
-export default function Id({ student }) {
+export default function Index({ student }) {
   return (
     <>
       <h1 className="text-title">{ student.name } Details</h1>
-      <div className="table-container">
+      <div className="table-container account-table">
         <table className="table-style-1">
           <tbody>
             <tr>
@@ -26,15 +26,36 @@ export default function Id({ student }) {
             </tr>
             <tr>
               <td>Student Name:</td>
-              <td>{ student.name }</td>
+              <td>
+                <input type="text" id="name" className="white-input"
+                       value={ student.name } required/>
+              </td>
             </tr>
             <tr>
               <td>Email Address:</td>
-              <td>{ student.email }</td>
+              <td>
+                <input type="text" id="name" className="white-input"
+                       value={ student.email } required/>
+              </td>
             </tr>
             <tr>
               <td>Phone Number:</td>
-              <td>{ student.phone }</td>
+              <td>
+                <input type="text" id="name" className="white-input"
+                       value={ student.phone } required/>
+              </td>
+            </tr>
+            <tr>
+              <td>Department:</td>
+              <td>
+                <select id="department" className="white-input" required>
+                  <option value="">Select department</option>
+                  <option value="1">CSE</option>
+                  <option value="2">EEE</option>
+                  <option value="3">LLB</option>
+                  <option value="4">ME</option>
+                </select>
+              </td>
             </tr>
             <tr>
               <td>Credits Completed:</td>
@@ -43,10 +64,6 @@ export default function Id({ student }) {
             <tr>
               <td>CGPA:</td>
               <td>{ student.cgpa }</td>
-            </tr>
-            <tr>
-              <td>Department:</td>
-              <td>{ student.department.name }</td>
             </tr>
             <tr>
               <td>Join Date:</td>
@@ -58,3 +75,4 @@ export default function Id({ student }) {
     </>
   );
 }
+

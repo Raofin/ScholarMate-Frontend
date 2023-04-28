@@ -1,4 +1,3 @@
-import { Container, Form, Button } from 'react-bootstrap';
 import { API_ENDPOINT } from '@/config';
 import axios from 'axios';
 
@@ -28,14 +27,14 @@ export default function RegisterPage() {
       body: JSON.stringify(data)
     })
       .then(response => response.json())
-      .then(data => window.location.href = '/Students')
+      .then(data => window.location.href = '/students')
       .catch(error => console.error(error));
   };
 
   return (
     <div className="container w-80 mt-20 mx-auto">
       <h1 className="text-title">Register</h1>
-      <form>
+      <form onSubmit={ handleSubmit }>
         <div className="mb-5">
           <label htmlFor="name" className="text-form-title">Name</label>
           <input type="text" id="name" className="grey-input"
@@ -60,10 +59,10 @@ export default function RegisterPage() {
           <label htmlFor="department" className="text-form-title">Department</label>
           <select id="department" className="grey-input" required>
             <option value="">Select department</option>
-            <option value="CSE">CSE</option>
-            <option value="EEE">EEE</option>
-            <option value="LLB">LLB</option>
-            <option value="ME">ME</option>
+            <option value="1">CSE</option>
+            <option value="2">EEE</option>
+            <option value="3">LLB</option>
+            <option value="4">ME</option>
           </select>
         </div>
         <div className="flex justify-center">

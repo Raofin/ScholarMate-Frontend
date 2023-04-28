@@ -1,10 +1,35 @@
-import { Container } from 'react-bootstrap';
+import axios from "axios";
+import { API_ENDPOINT } from "@/config";
+
+export async function getServerSideProps(context) {
+  const { params } = context;
+  let { id } = params;
+  id = id ?? 1;
+
+  const response = await axios.get(`${ API_ENDPOINT }/students/${ id }`);
+  const student = response.data;
+
+  return { props: { student } };
+}
 
 function MyAccountPage() {
   return (
-    <Container className="mt-4 w-20 p-3 d-flex justify-content-center">
-      <h1>My Account Details</h1>
-    </Container>
+    <>
+      <h1>View Account</h1>
+      <table>
+        <tbody>
+          <tr>
+            <td>Student Name</td>
+            <td>
+              <input type="text" id="name" className="grey-input" required/>
+            </td>
+          </tr>
+          <tr>
+
+          </tr>
+        </tbody>
+      </table>
+    </>
   );
 }
 

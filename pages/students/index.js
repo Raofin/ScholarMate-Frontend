@@ -11,7 +11,7 @@ export async function getServerSideProps(context) {
 export default function StudentTable({ students }) {
   return (
     <>
-      <h1 className="text-title">Students List</h1>
+      <h1 className="text-title">Student List</h1>
       <div className="table-container">
         <table className="table-style-1">
           <thead>
@@ -30,7 +30,7 @@ export default function StudentTable({ students }) {
                 <td>{ student.name }</td>
                 <td>{ student.email }</td>
                 <td>{ student.department.name }</td>
-                <td><a href={ `/StudentDetails?id=${ student.id }` } className="btn btn-primary">View Details</a></td>
+                <td><a href={ `/students/${ student.id }` }>View Details</a></td>
               </tr>
             )) }
           </tbody>
