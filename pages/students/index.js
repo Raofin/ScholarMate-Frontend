@@ -8,6 +8,17 @@ export async function getServerSideProps(context) {
   return { props: { students } };
 }
 
+export async function deleteStudent(id) {
+  try {
+    const response = await axios.delete(`${ API_ENDPOINT }/students/${ id }`);
+    console.log(response);
+    window.location.reload();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
 export default function StudentTable({ students }) {
   return (
     <>
@@ -19,8 +30,8 @@ export default function StudentTable({ students }) {
               <th>Student ID</th>
               <th>Name</th>
               <th>Email Address</th>
-              <th>Department</th>
-              <th>Details</th>
+              <th className={"text-center"}>Department</th>
+              <th colSpan="3" className={"text-center"}>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -29,8 +40,10 @@ export default function StudentTable({ students }) {
                 <td>{ student.studentId }</td>
                 <td>{ student.name }</td>
                 <td>{ student.email }</td>
-                <td>{ student.department.name }</td>
-                <td><a href={ `/students/${ student.id }` }>View Details</a></td>
+                <td className={"text-center"}>{ student.department.name }</td>
+                <td className={"!px-1 text-center"}><a href={ `/students/${ student.id }` }>View Details</a></td>
+                <td className={"!px-1"}><a href={ `/students/${ student.id }/update` }>Edit</a></td>
+                <td className={"!px-1"}><a href="" onClick={() => deleteStudent(student.id)}>Delete</a></td>
               </tr>
             )) }
           </tbody>

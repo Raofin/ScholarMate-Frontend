@@ -57,7 +57,7 @@ export default function Id({ student }) {
       </div>
 
       <div className="flex justify-center">
-        <a href="/update" className="blue-button">
+        <a href={ `/students/${ student.id }/update` } className="blue-button">
           update
         </a>
       </div>
