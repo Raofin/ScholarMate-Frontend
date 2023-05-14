@@ -1,6 +1,10 @@
 import { API_ENDPOINT } from "@/config";
+import Cookies from 'js-cookie';
+import {useRouter} from "next/router";
 
 export default function LoginPage() {
+  const router = useRouter();
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -18,11 +22,13 @@ export default function LoginPage() {
     })
       .then(response => response.json())
       .then(data => {
-        if (data.message === "Login successful") {
-          localStorage.setItem('authenticatedUser', JSON.stringify(data.user));
-          console.log("Successful");
+        if (data.message !== "Login failed") {
+          localStorage.setItem('authenticatedUser', JSON.stringify(data));
+          Cookies.set('authenticatedUser', JSON.stringify(data), {expires: 7});
+          console.log(Cookies.get('authenticatedUser'));
+          router.push('/dashboard');
         } else {
-          console.log("Failed");
+          console.log("Login Failed");
         }
       })
       .catch(error => console.error(error));
