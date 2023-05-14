@@ -24,8 +24,11 @@ export default function LoginPage() {
       .then(data => {
         if (data.message !== "Login failed") {
           localStorage.setItem('authenticatedUser', JSON.stringify(data));
-          Cookies.set('authenticatedUser', JSON.stringify(data), {expires: 7});
-          console.log(Cookies.get('authenticatedUser'));
+
+          if (form.elements.remember.checked) {
+            Cookies.set('authenticatedUser', JSON.stringify(data), {expires: 7});
+          }
+
           router.push('/dashboard');
         } else {
           console.log("Login Failed");

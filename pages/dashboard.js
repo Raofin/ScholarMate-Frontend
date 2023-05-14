@@ -6,7 +6,11 @@ function DashboardPage() {
   const router = useRouter();
 
   useEffect(() => {
-    if (!Cookies.get('authenticatedUser')) {
+    if (Cookies.get('authenticatedUser')) {
+      localStorage.setItem('authenticatedUser', Cookies.get('authenticatedUser'));
+    }
+
+    if (!localStorage.getItem('authenticatedUser')) {
       router.replace('/login'); // Redirect to login page
     }
   }, []);

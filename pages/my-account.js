@@ -1,36 +1,71 @@
 import axios from "axios";
-import { API_ENDPOINT } from "@/config";
+import {API_ENDPOINT} from "@/config";
+import {useRouter} from "next/router";
+import {useEffect, useState} from "react";
+import Cookies from "js-cookie";
+import {DatetimeFormat} from "@/components/datetime-format";
 
-export async function getServerSideProps(context) {
-  const { params } = context;
-  let { id } = params;
-  id = id ?? 1;
+export default function MyAccountPage() {
 
-  const response = await axios.get(`${ API_ENDPOINT }/students/${ id }`);
-  const student = response.data;
+  const [student, setStudent] = useState(null);
+  const router = useRouter();
 
-  return { props: { student } };
-}
+  useEffect(() => {
+    const authenticatedUser = localStorage.getItem('authenticatedUser');
+    if (authenticatedUser) {
+      setStudent(JSON.parse(authenticatedUser));
+    } else {
+      router.replace('/login');
+    }
+  }, []);
 
-function MyAccountPage() {
   return (
-    <>
-      <h1>View Account</h1>
-      <table>
-        <tbody>
-          <tr>
-            <td>Student Name</td>
-            <td>
-              <input type="text" id="name" className="grey-input" required/>
-            </td>
-          </tr>
-          <tr>
+      <>
+      <h1 className="text-title">My Account</h1>
+      <div className="table-container account-table">
+        <table className="table-style-1">
+          <tbody>
+            <tr>
+              <td>Student ID:</td>
+              <td>{ student?.studentId }</td>
+            </tr>
+            <tr>
+              <td>Student Name:</td>
+              <td>{ student?.name }</td>
+            </tr>
+            <tr>
+              <td>Email Address:</td>
+              <td>{ student?.email }</td>
+            </tr>
+            <tr>
+              <td>Phone Number:</td>
+              <td>{ student?.phone }</td>
+            </tr>
+            <tr>
+              <td>Credits Completed:</td>
+              <td>{ student?.creditsCompleted }</td>
+            </tr>
+            <tr>
+              <td>CGPA:</td>
+              <td>{ student?.cgpa }</td>
+            </tr>
+            <tr>
+              <td>Department:</td>
+              <td>{ student?.department.name }</td>
+            </tr>
+            <tr>
+              <td>Join Date:</td>
+              <td>{ new Date(student?.joinDate).toLocaleDateString('en-US', DatetimeFormat) }</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-          </tr>
-        </tbody>
-      </table>
+      <div className="flex justify-center">
+        <a href={ `/students/${ student?.id }/update` } className="blue-button">
+          update
+        </a>
+      </div>
     </>
   );
 }
-
-export default MyAccountPage;
