@@ -51,7 +51,7 @@ export default function MyAccountPage() {
             </tr>
             <tr>
               <td>Department:</td>
-              <td>{ student?.department.name }</td>
+              <td>{ student?.department?.name }</td>
             </tr>
             <tr>
               <td>Join Date:</td>

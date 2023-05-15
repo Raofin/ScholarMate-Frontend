@@ -18,7 +18,6 @@ export async function deleteStudent(id) {
   }
 }
 
-
 export default function StudentTable({ students }) {
   return (
     <>
