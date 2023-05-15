@@ -44,7 +44,7 @@ a {
 /* Table */
 
 .table-container {
-  @apply relative mx-64 mt-5 mb-16 overflow-x-auto shadow-md sm:rounded-lg;
+  @apply relative mx-16 mt-5 mb-16 overflow-x-auto shadow-md sm:rounded-lg;
 }
 
 .table-style-1 {

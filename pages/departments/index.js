@@ -28,7 +28,7 @@ export default function DepartmentTable({ departments }) {
                 <td>{ department.name }</td>
                 <td>{ department.description }</td>
                 <td>{ department.head.name }</td>
-                <td><a href={ `/departments/${ department.id }` }>View Details</a></td>
+                <td><a href={ `/departments/${ department.id }` }>View Students</a></td>
               </tr>
             )) }
           </tbody>
